@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <BannerComp/>
+  <div class="main-container">
+    <h1 class="form-title-monte">Monte o seu Awesome Burger</h1>
+    <FormComp/>
   </div>
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import BannerComp from '@/components/BannerComp.vue';
+import FormComp from '@/components/FormComp.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    BannerComp,
+    FormComp
   }
 }
+
 </script>
+
+<style>
+
+.form-title-monte {
+
+  margin: 0 auto 0 -60px;
+
+}
+
+</style>

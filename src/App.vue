@@ -1,30 +1,47 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <NavbarComp :logo="logo_src" :alt="app_name"/>
   <router-view/>
+  <FooterComp/>
 </template>
 
+<script>
+
+import NavbarComp from './components/NavbarComp.vue';
+import FooterComp from './components/FooterComp.vue';
+
+export default {
+    components: {
+        NavbarComp,
+        FooterComp
+    },
+    data() {
+      return {
+        logo_src: '/img/Hamburger2.jpg',
+        app_name: 'awesomeburger'
+      }
+    }
+}
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
+  * {
+    font-family: Helvertica;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .main-container {
+    margin: 50px;
+    min-height: 300px;
+  }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  h1 {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 50px;
+    color: #003566;
+  }
 </style>
